@@ -16,25 +16,22 @@
 
 package com.springbatch.tutorials.batch;
 
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.Step;
-import org.springframework.batch.core.StepContribution;
+import org.springframework.batch.core.*;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
-import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Configuration
 @EnableAutoConfiguration
@@ -45,8 +42,12 @@ public class SampleBatchApplication {
 	@Autowired
 	private JobBuilderFactory jobs;
 
+
 	@Autowired
 	private StepBuilderFactory steps;
+
+	@Autowired private AnnotationConfigApplicationContext applicationContext;
+
 
 	@Bean
 	protected Tasklet tasklet() {
@@ -61,12 +62,20 @@ public class SampleBatchApplication {
 				Integer value = (Integer) context.getAttribute("times");
 
 				if ( value == null) {
+					try {
+						Job job = jobs.get("childjob").incrementer(new RunIdIncrementer())
+								.listener(new JobExecutionListener()).start(step1()).build();
+					} catch (Exception exception) {
+						exception.printStackTrace();
+						System.out.println("getting exception " + exception.getLocalizedMessage());
+					}
 					value = 0;
 				}
+
 				context.setAttribute("times", ++value);
-				System.out.println("this is tasklet execution "+ value + " times");
-				System.out.println(context.toString());
-				System.out.println(contribution.toString());
+				ExecutorService executorService = executorService( 5);
+				executorService.shutdownNow();
+				System.out.println(executorService.toString());
 				if (currentTime.getTime() - startTime.getTime() > 5000)
 					return RepeatStatus.FINISHED;
 				else
@@ -76,10 +85,19 @@ public class SampleBatchApplication {
 	}
 
 	@Bean
+	@Scope("prototype")
+	public ExecutorService executorService(Integer threadCount) {
+
+		ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
+		return executorService;
+	}
+
+	@Bean
 	public Job job() throws Exception {
 		return this.jobs.get("job").incrementer(new RunIdIncrementer())
 				.listener(new JobExecutionListener()).start(step1()).build();
 	}
+
 
 	@Bean
 	protected Step step1() throws Exception {
