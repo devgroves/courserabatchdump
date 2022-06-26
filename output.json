@@ -1,0 +1,236 @@
+[
+  {
+    "courseType": "v2.ondemand",
+    "id": "BRrPcqdAEeqnyg4TRzUbNQ",
+    "slug": "uva-darden-artificial-intelligence-marketing",
+    "name": "Artificial Intelligence in Marketing"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "v6NPHbXvEeW2iwpbOuagWQ",
+    "slug": "ruanjian-gongcheng",
+    "name": "软件工程"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "rsE-F_PIEeqdDRIRGqcDrw",
+    "slug": "custom-distributed-training-with-tensorflow",
+    "name": "Custom and Distributed Training with TensorFlow"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "TWt-Wx_UEeuhjBL3DC5euw",
+    "slug": "uva-darden-digital-product-management-pt",
+    "name": "Gestão de produtos digitais: Princípios básicos modernos"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "OpY3Wlt7EeugOA4J84JY3Q",
+    "slug": "use-python-create-web-testing-bot",
+    "name": "Use Python to Create a Web Testing Bot"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "Mg4yIVjHEeydIxKChA98fQ",
+    "slug": "moqadema-le-physic-al3ab-video-be-estkhdam-moharak-al3ab-unity",
+    "name": "مقدمة لفيزياء ألعاب الفيديو باستخدام محرك ألعاب Unity"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "D7V2hOcDEeqWPAocwN4sNQ",
+    "slug": "remote-team-management",
+    "name": "How to Manage a Remote Team"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "z8glqhUNEeqzsw6YoH8vIw",
+    "slug": "blockchain-strategic-action-plan",
+    "name": "Blockchain in Financial Services: Strategic Action Plan"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "ESRGuuYzEeeUDhLeFYRShg",
+    "slug": "corp-sustainability",
+    "name": "Corporate Sustainability. Understanding and Seizing the Strategic Opportunity "
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "zGcjWGXlEeyIUg4Qv2RsBQ",
+    "slug": "verbinde-tools-in-slack-miteinander",
+    "name": "Verbinde Tools in Slack miteinander"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "2WIHvpowEeuG-w7Ew7bzMQ",
+    "slug": "work-controls-properties-vbnet",
+    "name": "Work with Controls and Properties in VB.NET"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "BpXc5-SWEeWThQoLOXqDhw",
+    "slug": "cloud-networking",
+    "name": "Cloud Networking"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "F48V2M_GEeyDjw4-lQuHnw",
+    "slug": "code-loops-cobol",
+    "name": "Code Loops in COBOL"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "J8QL9k-_EeyLIRLL9niz0w",
+    "slug": "aleamal-mae-murashahat-tcpdump",
+    "name": "Working with tcpdump Filters"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "sfYP0IEsEeyWPQqrmHZ9QQ",
+    "slug": "how-create-gantt-chart-tableau",
+    "name": "How to Create a Gantt Chart in Tableau"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "Zz0lopT9EeyHuA5cIqn4NQ",
+    "slug": "migrer-et-tester-des-composants-avec-java",
+    "name": "Migrer et tester des composants avec Java"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "nRPPU4cIEemnYBKoCytk8g",
+    "slug": "optimize-machine-learning-model-performance",
+    "name": "Optimizing Machine Learning Performance"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "X8hh83M5EeuBTg7vUdMe9w",
+    "slug": "develop-a-savings-plan-on-a-fixed-income-with-google-sheets-ar",
+    "name": "تطوير خطة توفير على دخل ثابت باستخدام جداول بيانات جوجل"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "Rysmu6GDEeuDgAowKXa1Bw",
+    "slug": "program-risk-management",
+    "name": "Program Risk Management in ClickUp"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "0sBMQx9NEee9pAq1iMODtg",
+    "slug": "silicon-thin-film-solar-cells",
+    "name": "Silicon Thin Film Solar Cells"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "btJvmOw4EeqvJAoWlWafpw",
+    "slug": "african-development--from-the-past-to-the-present",
+    "name": "African development – from the past to the present"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "-U1lhALDEeyHlw6-urbWjw",
+    "slug": "deploying-a-python-data-analytics-web-app-on-heroku",
+    "name": "Deploying a Python Data Analytics web app on Heroku "
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "7dBeI8uGEeWoOwoxwyRjgQ",
+    "slug": "preserving-cultural-heritage",
+    "name": "Recovering the Humankind's Past and Saving the Universal Heritage"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "JPmcFWqcEeecwwoEvbWpsg",
+    "slug": "security-and-privacy-in-tor-network",
+    "name": "Security and Privacy in TOR Network"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "3bL_2qkxEeyjPxJkzIUqCw",
+    "slug": "googlecloud-google-appsheet-getting-started-6vj7f",
+    "name": "Google AppSheet: Getting Started"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "f7m4g9AgEeqT7g6IVH9D0w",
+    "slug": "enterprise-resiliency",
+    "name": "Introduction to Enterprise Resiliency"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "nBOY_jY0Eem0_ArClQZx9A",
+    "slug": "aws-fundamentals-building-serverless-applications",
+    "name": "AWS Fundamentals: Building Serverless Applications"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "XmExpcxfEey9hQ7rZxGi2w",
+    "slug": "back-end-developer-capstone",
+    "name": "Back-End Developer Capstone "
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "QW1iEeA4Eeu-EQpycSBBow",
+    "slug": "sistem-operasi-dan-anda-menjadi-pengguna-yang-berdaya",
+    "name": "Sistem Operasi dan Anda: Menjadi Pengguna yang Berdaya"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "rw7_eqJuEeua9hJHpJ2HqQ",
+    "slug": "physique-deux-infinis-et-nous",
+    "name": "Les deux infinis et nous"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "wIiu6ShLEeabkA6A3tuC4Q",
+    "slug": "transmedia-writing",
+    "name": "Transmedia Writing"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "yunGVMw2EeqjgxLnMORuJQ",
+    "slug": "practical-vim-editor-commands-on-linux",
+    "name": "Practical Vim Editor Commands On Linux"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "0FMl8S8GEemvsQrYkluC5g",
+    "slug": "introduction-cybersecurity-cyber-attacks",
+    "name": "Introduction to Cybersecurity Tools & Cyber Attacks"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "lf2q-R6UEeSzvSIAC0KYCQ",
+    "slug": "kennedy",
+    "name": "The Kennedy Half Century"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "QJlWBW30Eeq2hwr9iuARBQ",
+    "slug": "strategic-sourcing",
+    "name": "Strategic Sourcing"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "XSLeWQ6pEeu9ZBLzQTJEhw",
+    "slug": "the-korean-alphabet-an-introduction-to-hangeul",
+    "name": "The Korean Alphabet: An Introduction to Hangeul"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "7ErrkakwEeyxDg4ukgkVlw",
+    "slug": "googlecloud-looker-functions-and-operators-j9rv9",
+    "name": "Looker Functions and Operators"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "xcqAU7oaEeq1DQ4cuiU-Sw",
+    "slug": "build-a-film-club-web-app-with-google-appengine",
+    "name": "Build a film club web app on Google AppEngine"
+  },
+  {
+    "courseType": "v2.ondemand",
+    "id": "tJApe-HgEeeSKxKWkG_JMg",
+    "slug": "causal-inference",
+    "name": "Causal Inference"
+  }
+]

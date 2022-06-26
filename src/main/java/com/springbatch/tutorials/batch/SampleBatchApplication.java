@@ -16,26 +16,47 @@
 
 package com.springbatch.tutorials.batch;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.springbatch.tutorials.batch.model.CourseMetaData;
+import com.springbatch.tutorials.batch.model.CourseResponse;
+import com.springbatch.tutorials.batch.tasklets.CourseGetTasklet;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.core.repository.ExecutionContextSerializer;
+import org.springframework.batch.core.repository.dao.Jackson2ExecutionContextStringSerializer;
+import org.springframework.batch.core.repository.support.JobRepositoryFactoryBean;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.json.JacksonJsonObjectMarshaller;
+import org.springframework.batch.item.json.JsonFileItemWriter;
+import org.springframework.batch.item.json.JsonObjectMarshaller;
+import org.springframework.batch.item.json.builder.JsonFileItemWriterBuilder;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.*;
+import org.springframework.core.io.Resource;
 
+import java.net.MalformedURLException;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan
 @EnableBatchProcessing
 public class SampleBatchApplication {
 
@@ -46,51 +67,6 @@ public class SampleBatchApplication {
 	@Autowired
 	private StepBuilderFactory steps;
 
-	@Autowired private AnnotationConfigApplicationContext applicationContext;
-
-
-	@Bean
-	protected Tasklet tasklet() {
-		return new Tasklet() {
-			@Override
-			public RepeatStatus execute(StepContribution contribution,
-					ChunkContext context) {
-
-				Date startTime = (Date) context.getStepContext().getJobExecutionContext().get("startTime");
-				Date currentTime = new Date();
-
-				Integer value = (Integer) context.getAttribute("times");
-
-				if ( value == null) {
-					try {
-						Job job = jobs.get("childjob").incrementer(new RunIdIncrementer())
-								.listener(new JobExecutionListener()).start(step1()).build();
-					} catch (Exception exception) {
-						exception.printStackTrace();
-						System.out.println("getting exception " + exception.getLocalizedMessage());
-					}
-					value = 0;
-				}
-
-				context.setAttribute("times", ++value);
-				ExecutorService executorService = executorService( 5);
-				executorService.shutdownNow();
-				System.out.println(executorService.toString());
-				if (currentTime.getTime() - startTime.getTime() > 5000)
-					return RepeatStatus.FINISHED;
-				else
-					return RepeatStatus.CONTINUABLE;
-			}
-		};
-	}
-
-	@Bean
-	@Scope("prototype")
-	public ExecutorService executorService(Integer threadCount) {
-
-		ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
-		return executorService;
-	}
 
 	@Bean
 	public Job job() throws Exception {
@@ -102,8 +78,9 @@ public class SampleBatchApplication {
 	@Bean
 	protected Step step1() throws Exception {
 		String epochStr = String.valueOf(new Date().getTime());
-		return this.steps.get("step1v" + epochStr).tasklet(tasklet()).throttleLimit(1).build();
+		return this.steps.get("step1v" + epochStr).tasklet(new CourseGetTasklet()).throttleLimit(1).build();
 	}
+
 
 
 	public static void main(String[] args) throws Exception {
